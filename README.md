@@ -81,6 +81,10 @@ IDMatakuliah (FK)
 Hari
 Waktu
 ```
+##
+Note : Primary Key (PK)
+       Foreign KEY (FK)
+##
 ## ERD (Entity Relationship Diagram)
 ```bash
 Tabel Mahasiswa terhubung dengan Tabel AmbilMatakuliah dengan FK NIM
