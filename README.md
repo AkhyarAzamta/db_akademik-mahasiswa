@@ -205,7 +205,7 @@ CREATE TABLE Jadwal (
     FOREIGN KEY (IDMatakuliah) REFERENCES Matakuliah(IDMatakuliah)
 );
 ```
-
+##
 ## Usage
 Untuk menampilkan satu data dari tabel Mahasiswa, Anda dapat menggunakan perintah SELECT dengan menambahkan kondisi WHERE. Contohnya seperti ini:
 ```python
