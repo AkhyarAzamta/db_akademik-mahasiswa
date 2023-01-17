@@ -1,10 +1,16 @@
 # ERD Akademik Mahasiswa
- 
-## Instalation
+ERD (Entity Relationship Diagram) adalah sebuah diagram yang digunakan untuk menggambarkan hubungan antara entitas dalam sebuah basis data. ERD digunakan untuk mendesain struktur basis data yang akan dibuat dan membantu dalam pembuatan kode SQL.
+
+## Instalasi
+jalankan xampp di windows :
 ```bash
-run xampp on your PC
-create database 
+buka aplikasi xampp kemudian start apache & Mysql
 ```
+di linux :
+```bash
+sudo /opt/lampp/xampp start
+```
+
 import akademik.sql to database and enjoy coding
 
 
