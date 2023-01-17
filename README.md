@@ -228,9 +228,9 @@ Perintah di atas akan menampilkan semua data dari baris yang memiliki tanggal la
 ## Menghapus Data
 Untuk menghapus satu data dari tabel, Anda dapat menggunakan perintah DELETE dengan menambahkan kondisi WHERE. Contohnya seperti ini:
 ```python
-DELETE FROM Mahasiswa WHERE NIM = '12345678';
+DELETE FROM Mahasiswa WHERE NIM = '41037006211099';
 ```
-Perintah di atas akan menghapus baris yang memiliki NIM = '12345678' dari tabel Mahasiswa. Ini akan menghapus seluruh data dari baris tersebut dan juga semua data yang terkait di tabel lain yang memiliki relasi dengan tabel Mahasiswa melalui foreign key.
+Perintah di atas akan menghapus baris yang memiliki NIM = '41037006211099' dari tabel Mahasiswa. Ini akan menghapus seluruh data dari baris tersebut dan juga semua data yang terkait di tabel lain yang memiliki relasi dengan tabel Mahasiswa melalui foreign key.
 
 Seperti contoh lain, jika Anda ingin menghapus data dari tabel Mengajar dengan IDMengajar = 1, Anda dapat menjalankan perintah seperti ini:
 ```python
