@@ -11,9 +11,23 @@ di linux :
 sudo /opt/lampp/xampp start
 ```
 
+## import databases
 import akademik.sql to database and enjoy coding
 
-
+## Manual Installation
+Untuk Tabel Mahasiswa:
+```python
+CREATE TABLE Mahasiswa (
+    NIM VARCHAR(10) PRIMARY KEY,
+    Nama VARCHAR(50) NOT NULL,
+    JenisKelamin VARCHAR(10) NOT NULL,
+    TempatLahir VARCHAR(50) NOT NULL,
+    TanggalLahir DATE NOT NULL,
+    Alamat TEXT NOT NULL,
+    NoTelp VARCHAR(15) NOT NULL,
+    Email VARCHAR(50) NOT NULL
+);
+```
 
 
 Untuk menampilkan satu data dari tabel Mahasiswa, Anda dapat menggunakan perintah SELECT dengan menambahkan kondisi WHERE. Contohnya seperti ini:
