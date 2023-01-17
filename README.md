@@ -1,6 +1,7 @@
 # ERD Akademik Mahasiswa
 ERD (Entity Relationship Diagram) adalah sebuah diagram yang digunakan untuk menggambarkan hubungan antara entitas dalam sebuah basis data. ERD digunakan untuk mendesain struktur basis data yang akan dibuat dan membantu dalam pembuatan kode SQL.
 
+<img src="/img/img.png" height="55px" width="55px">
 ## Instalasi
 jalankan xampp di windows :
 ```bash
