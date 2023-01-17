@@ -221,9 +221,9 @@ Perintah di atas akan menampilkan hanya kolom Nama, JenisKelamin, dan TempatLahi
 
 Jika Anda ingin menampilkan data mahasiswa dengan kondisi tertentu seperti tahun lahir atau alamat, Anda dapat menambahkan kondisi WHERE lainnya. Contohnya seperti ini:
 ```python
-SELECT * FROM Mahasiswa WHERE TanggalLahir BETWEEN '2000-01-01' AND '2005-12-31' AND Alamat = 'Jakarta';
+SELECT * FROM Mahasiswa WHERE TanggalLahir BETWEEN '2000-01-01' AND '2005-12-31' AND Alamat = 'Bandung';
 ```
-Perintah di atas akan menampilkan semua data dari baris yang memiliki tanggal lahir antara tahun 2000-2005 dan alamat di Jakarta.
+Perintah di atas akan menampilkan semua data dari baris yang memiliki tanggal lahir antara tahun 2000-2005 dan alamat di Bandung.
 ##
 ## Source Code by
 
