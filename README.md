@@ -206,8 +206,21 @@ CREATE TABLE Jadwal (
 );
 ```
 
+## Usage
 Untuk menampilkan satu data dari tabel Mahasiswa, Anda dapat menggunakan perintah SELECT dengan menambahkan kondisi WHERE. Contohnya seperti ini:
 ```python
 SELECT * FROM Mahasiswa WHERE NIM = '41037006211099';
 ```
-## usage
+Perintah di atas akan menampilkan semua data dari baris yang memiliki NIM = '41037006211099'. Jika Anda hanya ingin menampilkan beberapa kolom tertentu, Anda dapat mengganti '*' dengan nama kolom yang diinginkan. Contohnya seperti ini:
+```python
+SELECT Nama, JenisKelamin, TempatLahir FROM Mahasiswa WHERE NIM = '41037006211099';
+```
+Perintah di atas akan menampilkan hanya kolom Nama, JenisKelamin, dan TempatLahir dari baris yang memiliki NIM = '41037006211099'.
+
+Jika Anda ingin menampilkan data mahasiswa dengan kondisi tertentu seperti tahun lahir atau alamat, Anda dapat menambahkan kondisi WHERE lainnya. Contohnya seperti ini:
+```python
+SELECT * FROM Mahasiswa WHERE TanggalLahir BETWEEN '2000-01-01' AND '2005-12-31' AND Alamat = 'Jakarta';
+```
+Perintah di atas akan menampilkan semua data dari baris yang memiliki tanggal lahir antara tahun 2000-2005 dan alamat di Jakarta.
+##
+
