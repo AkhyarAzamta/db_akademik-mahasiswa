@@ -14,7 +14,7 @@ sudo /opt/lampp/xampp start
 ## import databases
 import akademik.sql to database and enjoy coding
 
-
+##
 
 
 ## Manual Installation
