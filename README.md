@@ -28,6 +28,15 @@ CREATE TABLE Mahasiswa (
     Email VARCHAR(50) NOT NULL
 );
 ```
+Untuk Tabel Prodi:
+```python
+CREATE TABLE Prodi (
+    IDProdi INT PRIMARY KEY,
+    NamaProdi VARCHAR(50) NOT NULL,
+    Jenjang VARCHAR(20) NOT NULL
+);
+
+```
 
 
 Untuk menampilkan satu data dari tabel Mahasiswa, Anda dapat menggunakan perintah SELECT dengan menambahkan kondisi WHERE. Contohnya seperti ini:
