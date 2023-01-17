@@ -208,7 +208,7 @@ CREATE TABLE Jadwal (
 );
 ```
 ##
-## Usage
+## Menampilkan Data
 Untuk menampilkan satu data dari tabel Mahasiswa, Anda dapat menggunakan perintah SELECT dengan menambahkan kondisi WHERE. Contohnya seperti ini:
 ```python
 SELECT * FROM Mahasiswa WHERE NIM = '41037006211099';
@@ -224,6 +224,21 @@ Jika Anda ingin menampilkan data mahasiswa dengan kondisi tertentu seperti tahun
 SELECT * FROM Mahasiswa WHERE TanggalLahir BETWEEN '2000-01-01' AND '2005-12-31' AND Alamat = 'Bandung';
 ```
 Perintah di atas akan menampilkan semua data dari baris yang memiliki tanggal lahir antara tahun 2000-2005 dan alamat di Bandung.
+##
+## Menghapus Data
+Untuk menghapus satu data dari tabel, Anda dapat menggunakan perintah DELETE dengan menambahkan kondisi WHERE. Contohnya seperti ini:
+```python
+DELETE FROM Mahasiswa WHERE NIM = '12345678';
+```
+Perintah di atas akan menghapus baris yang memiliki NIM = '12345678' dari tabel Mahasiswa. Ini akan menghapus seluruh data dari baris tersebut dan juga semua data yang terkait di tabel lain yang memiliki relasi dengan tabel Mahasiswa melalui foreign key.
+
+Seperti contoh lain, jika Anda ingin menghapus data dari tabel Mengajar dengan IDMengajar = 1, Anda dapat menjalankan perintah seperti ini:
+```python
+DELETE FROM Mengajar WHERE IDMengajar = 1;
+```
+Sebelum menghapus data pastikan anda melakukan backup atau seleksi data yang akan dihapus, atau pastikan anda memiliki akses yang cukup untuk menghapus data.
+
+Harap berhati-hati dalam menjalankan perintah DELETE karena data yang dihapus tidak dapat dikembalikan lagi.
 ##
 ## Source Code by
 
