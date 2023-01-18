@@ -1,6 +1,13 @@
 <?php
 require 'koneksi.php'; 
 require 'functions.php';
+
+// if (isset($_GET['op'])) {
+//     $op = $_GET['op'];
+// } else {
+//     $op = "";
+// }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,15 +18,7 @@ require 'functions.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Mahasiswa Karyawan Teknik Uninus</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <style>
-        .mx-auto {
-            width: 95vw;
-        }
-
-        .card {
-            margin-top: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -29,6 +28,7 @@ require 'functions.php';
         <div class="card">
             <div class="card-header text-white bg-gradient bg-primary">
             Data Mahasiswa Karyawan Teknik Uninus
+            <?= var_dump($op);?>
             </div>
             <div class="card-body">
                 <table class="table table-striped table-hover">
@@ -74,7 +74,7 @@ require 'functions.php';
                                 <td scope="row"><?php echo $Alamat ?></td>
                                 <td scope="row"><?php echo $NoTelp ?></td>
                                 <td scope="row">
-                                    <a href="index.php?op=edit&NIM=<?php echo $NIM ?>"><button type="button" class="btn btn-warning">Edit</button></a>
+                                    <a href="add.php?op=edit&NIM=<?php echo $NIM ?>"><button type="button" class="btn btn-warning">Edit</button></a>
                                     <a href="index.php?op=delete&NIM=<?php echo $NIM?>" onclick="return confirm('Yakin mau delete data?')"><button type="button" class="btn btn-danger">Delete</button></a>            
                                 </td>
                             </tr>

@@ -1,6 +1,7 @@
 <?php
 require 'koneksi.php'; 
 require 'functions.php';
+// require 'index.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +20,7 @@ require 'functions.php';
             <div class="card">
                 <div class="card-header bg-info bg-gradient ">
                 Create / Edit Data
+                <?= var_dump($op);?>
             </div>
             <div class="card-body">
                 <?php
