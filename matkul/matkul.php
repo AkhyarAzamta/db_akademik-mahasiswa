@@ -1,6 +1,6 @@
 <?php
-require 'koneksi.php'; 
-require 'fdosen.php';
+require './config/koneksi.php'; 
+require './matkul/fmatkul.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +9,7 @@ require 'fdosen.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Dosen Karyawan Teknik Uninus</title>
+    <title>Data Karyawan Teknik Uninus</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <style>
         .mx-auto {
@@ -37,7 +37,7 @@ require 'fdosen.php';
                         <?php echo $error ?>
                     </div>
                 <?php
-                    header("refresh:5;url=dosen.php");//5 : detik
+                    header("refresh:5;url=matkul.php");//5 : detik
                 }
                 ?>
                 <?php
@@ -47,20 +47,26 @@ require 'fdosen.php';
                         <?php echo $sukses ?>
                     </div>
                 <?php
-                    header("refresh:5;url=dosen.php");
+                    header("refresh:5;url=matkul.php");
                 }
                 ?>
                 <form action="" method="POST">
                     <div class="mb-3 row">
-                        <label for="NIP" class="col-sm-2 col-form-label">NIP</label>
+                        <label for="KodeMK" class="col-sm-2 col-form-label">KodeMK</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="NIP" name="NIP" value="<?php echo $NIP ?>">
+                            <input type="text" class="form-control" id="KodeMK" name="KodeMK" value="<?php echo $KodeMK ?>">
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="Nama" class="col-sm-2 col-form-label">Nama</label>
+                        <label for="NamaMatakuliah" class="col-sm-2 col-form-label">NamaMatakuliah</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="Nama" name="Nama" value="<?php echo $Nama ?>">
+                            <input type="text" class="form-control" id="NamaMatakuliah" name="NamaMatakuliah" value="<?php echo $NamaMatakuliah ?>">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="SKS" class="col-sm-2 col-form-label">SKS</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="SKS" name="SKS" value="<?php echo $SKS ?>">
                         </div>
                     </div>
                     <div class="mb-3 row">
@@ -73,6 +79,7 @@ require 'fdosen.php';
                             </select>
                         </div>
                     </div>
+                    </div>
                     <div class="col-12">
                         <input type="submit" name="simpan" value="Simpan Data" class="btn btn-success" />
                     </div>
@@ -83,39 +90,40 @@ require 'fdosen.php';
         <!-- untuk mengeluarkan data -->
         <div class="card">
             <div class="card-header text-white bg-gradient bg-primary">
-            Data Dosen Uninus
+            Data Mata Kuliah 
             </div>
             <div class="card-body">
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
                             <th scope="col">NO</th>
-                            <th scope="col">NIP</th>
-                            <th scope="col">Nama</th>
-                            <th scope="col">Jenis Kelamin</th>
+                            <th scope="col">KodeMK</th>
+                            <th scope="col">Nama MataKuliah</th>
+                            <th scope="col">SKS</th>
                             <th scope="col">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        $sql2   = "select * from Dosen";
+                        $sql2   = "select * from Matakuliah";
                         $q2     = mysqli_query($koneksi, $sql2);
                         $urut   = 1;
                         while ($r2 = mysqli_fetch_array($q2)) {
-                            $id         = $r2['NIP'];
-                            $NIP        = $r2['NIP'];
-                            $Nama       = $r2['Nama'];
-                            $JenisKelamin  = $r2['JenisKelamin'];
+                            $id         = $r2['KodeMK'];
+                            $KodeMK        = $r2['KodeMK'];
+                            $NamaMatakuliah       = $r2['NamaMatakuliah'];
+                            $SKS  = $r2['SKS'];
+
 
                         ?>
                             <tr>
                                 <th scope="row"><?php echo $urut++ ?></th>
-                                <td scope="row"><?php echo $NIP ?></td>
-                                <td scope="row"><?php echo $Nama ?></td>
-                                <td scope="row"><?php echo $JenisKelamin?></td>
+                                <td scope="row"><?php echo $KodeMK ?></td>
+                                <td scope="row"><?php echo $NamaMatakuliah ?></td>
+                                <td scope="row"><?php echo $SKS?></td>
                                 <td scope="row">
-                                    <a href="dosen.php?op=edit&NIP=<?php echo $NIP ?>"><button type="button" class="btn btn-warning">Edit</button></a>
-                                    <a href="dosen.php?op=delete&NIP=<?php echo $NIP?>" onclick="return confirm('Yakin mau delete data?')"><button type="button" class="btn btn-danger">Delete</button></a>            
+                                    <a href="matkul.php?op=edit&KodeMK=<?php echo $KodeMK ?>"><button type="button" class="btn btn-warning">Edit</button></a>
+                                    <a href="matkul.php?op=delete&KodeMK=<?php echo $KodeMK?>" onclick="return confirm('Yakin mau delete data?')"><button type="button" class="btn btn-danger">Delete</button></a>            
                                 </td>
                             </tr>
                         <?php

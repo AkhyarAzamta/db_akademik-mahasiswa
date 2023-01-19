@@ -1,6 +1,7 @@
 <?php
-require 'koneksi.php';
-require 'functions.php';
+require './config/koneksi.php';
+require './config/functions.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,31 +26,52 @@ require 'functions.php';
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="index.php">Akademik</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="./index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="./dosen/dosen.php">Dosen</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        <a class="nav-link " href="./matkul/matkul.php">Matkul</a>
                     </li>
                 </ul>
                 <form method="post" class="d-flex">
-                    <input class="form-control me-2" name="NIM" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control me-2" name="NIM" type="search" placeholder="Cari Data Mahasiswa" aria-label="Search">
                     <button class="btn btn-outline-success" name="search" type="submit">Search</button>
                 </form>
             </div>
         </div>
     </nav>
-
+    <?php
+                if ($error) {
+                ?>
+                    <div class="alert alert-danger" role="alert">
+                        <?php echo $error ?>
+                    </div>
+                <?php
+                    header("refresh:5;url=index.php");//5 : detik
+                }
+                ?>
+                <?php
+                if ($sukses) {
+                ?>
+                    <div class="alert alert-success" role="alert">
+                        <?php echo $sukses ?>
+                    </div>
+                <?php
+                    header("refresh:5;url=index.php");
+                }
+                ?>
+                <a href="./add.php">
     <button class="btn btn-success m-4 ">Tambah Data</button>
+    </a>
     <!-- untuk mengeluarkan data -->
     <div class="card">
         <div class="card-header text-white bg-gradient bg-primary">
@@ -91,7 +113,7 @@ require 'functions.php';
 
                         //menampilkan data Mahasiswa
                         while ($r2 = mysqli_fetch_array($q2)) {
-                            // $id         = $r2['NIM'];
+                            $id         = $r2['NIM'];
                             $NIM        = $r2['NIM'];
                             $Nama       = $r2['Nama'];
                             $NIK        = $r2['NIK'];
@@ -148,7 +170,7 @@ require 'functions.php';
                                 <td scope="row"><?php echo $Alamat ?></td>
                                 <td scope="row"><?php echo $NoTelp ?></td>
                                 <td scope="row">
-                                    <a href="index.php?op=edit&NIM=<?php echo $NIM ?>"><button type="button" class="btn btn-warning">Edit</button></a>
+                                    <a href="add.php?op=edit&NIM=<?php echo $NIM ?>"><button type="button" class="btn btn-warning">Edit</button></a>
                                     <a href="index.php?op=delete&NIM=<?php echo $NIM ?>" onclick="return confirm('Yakin mau delete data?')"><button type="button" class="btn btn-danger">Delete</button></a>
                                 </td>
                             </tr>
