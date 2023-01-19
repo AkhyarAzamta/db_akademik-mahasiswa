@@ -70,10 +70,15 @@ require 'fmatkul.php';
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="IDProdi" class="col-sm-2 col-form-label">IDProdi</label>
+                        <label for="JenisKelamin" class="col-sm-2 col-form-label">Jenis Kelamin</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="IDProdi" name="IDProdi" value="<?php echo $IDProdi ?>">
+                            <select class="form-control" name="JenisKelamin" id="JenisKelamin">
+                                <option value="">- Pilih Jenis Kelamin -</option>
+                                <option value="Laki-Laki" <?php if ($JenisKelamin== "Laki-Laki") echo "selected" ?>>Laki-Laki</option>
+                                <option value="Perempuan" <?php if ($JenisKelamin== "Perempuan") echo "selected" ?>>Perempuan</option>
+                            </select>
                         </div>
+                    </div>
                     </div>
                     <div class="col-12">
                         <input type="submit" name="simpan" value="Simpan Data" class="btn btn-success" />
@@ -95,7 +100,6 @@ require 'fmatkul.php';
                             <th scope="col">KodeMK</th>
                             <th scope="col">Nama MataKuliah</th>
                             <th scope="col">SKS</th>
-                            <th scope="col">ID Prodi</th>
                             <th scope="col">Aksi</th>
                         </tr>
                     </thead>
@@ -109,7 +113,6 @@ require 'fmatkul.php';
                             $KodeMK        = $r2['KodeMK'];
                             $NamaMatakuliah       = $r2['NamaMatakuliah'];
                             $SKS  = $r2['SKS'];
-                            $IDProdi  = $r2['IDProdi'];
 
 
                         ?>
@@ -118,7 +121,6 @@ require 'fmatkul.php';
                                 <td scope="row"><?php echo $KodeMK ?></td>
                                 <td scope="row"><?php echo $NamaMatakuliah ?></td>
                                 <td scope="row"><?php echo $SKS?></td>
-                                <td scope="row"><?php echo $IDProdi?></td>
                                 <td scope="row">
                                     <a href="matkul.php?op=edit&KodeMK=<?php echo $KodeMK ?>"><button type="button" class="btn btn-warning">Edit</button></a>
                                     <a href="matkul.php?op=delete&KodeMK=<?php echo $KodeMK?>" onclick="return confirm('Yakin mau delete data?')"><button type="button" class="btn btn-danger">Delete</button></a>            

@@ -22,7 +22,6 @@ if ($op == 'edit') {
     $KodeMK        = $r1['KodeMK'];
     $NamaMatakuliah       = $r1['NamaMatakuliah'];
     $SKS  = $r1['SKS'];
-    $IDProdi  = $r1['IDProdi'];
 
     if ($KodeMK == '') {
         $error = "Data tidak ditemukan";
@@ -32,12 +31,11 @@ if (isset($_POST['simpan'])) { //untuk create
     $KodeMK        = $_POST['KodeMK'];
     $NamaMatakuliah       = $_POST['NamaMatakuliah'];
     $SKS  = $_POST['SKS'];
-    $IDProdi  = $_POST['IDProdi'];
 
 
-    if ($KodeMK && $NamaMatakuliah && $SKS && $IDProdi) {
+    if ($KodeMK && $NamaMatakuliah && $SKS) {
         if ($op == 'edit') { //untuk update
-            $sql1       = "update Matakuliah set KodeMK = '$KodeMK',NamaMatakuliah='$NamaMatakuliah',SKS='$SKS',IDProdi='$IDProdi' where KodeMK = '$id'";
+            $sql1       = "update Matakuliah set KodeMK = '$KodeMK',NamaMatakuliah='$NamaMatakuliah',SKS='$SKS' where KodeMK = '$id'";
             $q1         = mysqli_query($koneksi, $sql1);
             if ($q1) {
                 $sukses = "Data berhasil diupdate";
@@ -45,7 +43,7 @@ if (isset($_POST['simpan'])) { //untuk create
                 $error  = "Data gagal diupdate";
             }
         } else { //untuk insert
-            $sql1   = "insert into Matakuliah values ('$KodeMK','$NamaMatakuliah','$SKS','$IDProdi')";
+            $sql1   = "insert into Matakuliah(KodeMK, NamaMatakuliah, SKS) values ('$KodeMK','$NamaMatakuliah','$SKS')";
             $q1     = mysqli_query($koneksi, $sql1);
             if ($q1) {
                 $sukses     = "Berhasil memasukkan data baru";
